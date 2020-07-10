@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    # @user = User.new()
-    @user = User.new(user_params)
+    # @user = User.new(user_params)
+    @user = User.new(first_name: params[:full_name])
     if @user.save
       redirect_to users_path
     else
